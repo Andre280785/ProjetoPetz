@@ -1,0 +1,128 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+h1{
+    color: #00008B;
+    text-shadow:  2px 2px #4c52578f;
+}
+
+.container-header{
+    height: 105px;
+    width: 100%;
+    background-color:#FFD700;
+}
+
+.logo{
+    padding: 20px 20px 10px 20px;
+}
+.menu-header{
+    background-color:#4169E1;
+    height: 2em;
+    width: 100%; 
+    border-bottom: solid 1px #00008B;   
+    border-top: solid 1px #00008B;
+}
+.menu-header ul{
+    margin: 0;
+    padding: 7px 15px;
+    
+}
+
+.menu-header ul li{
+    list-style-type: none;
+    color: white;
+    font-weight: bold;
+}
+
+.container-section{
+    width: 100%;
+    min-height: 500px;
+    margin-top: 0;
+    text-align: center;
+    background-color: white;
+    border-top: solid 1px transparent;
+}
+
+.alert{
+    color:white;
+    font-weight: bold;
+    display: block;
+    padding: 10px 10px 13px 10px;
+    height: 25px;
+    width: 40%;
+    margin: auto;
+    border: solid 1px #4169E1;
+    border-radius: 5px;
+    box-shadow: 2px 2px #4c52578f;
+    background-color:#102e8a;
+    text-align: center;
+    
+}
+.alert i{
+    font-size: 25px;
+    color: #FFD700;
+}
+
+.rodape{
+    width: 100%;
+    height: 30px;
+    background-color: #4169E1;
+    border-top: solid 1px #00008B;
+}
+    
+.rodape p{
+    margin: 0;
+    color: white;
+    padding-top: 8px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.data{
+    margin: 15px;
+    display: block;
+}
+
+.table{
+    width: 85%;    
+    border-collapse: collapse;
+    text-align: left;
+    display: inline;
+    text-align: center;
+    margin: auto;
+}
+.table td{
+    padding: .75em;
+}
+
+.table th{
+    background-color:  #4169E1 ;
+    padding: 0.75em;
+    color: white;
+    font-weight: bold;
+}
+
+.table tbody tr td{
+    border-bottom: 1px solid #666;
+}
+
+.table tbody tr:first-child td{
+    border-top: 2px solid #666;
+}
+
+.table tbody tr:last-child td{
+    border-bottom: 2px solid #666;
+}
+
+.table tbody tr:nth-child(even) td{
+    background-color: #eee;
+}
+
+#processar{
+     margin: 10px;
+}
