@@ -1,6 +1,6 @@
 ﻿<?php
-
-include("../cgi/conexaoOracle.php");
+date_default_timezone_set('America/Sao_Paulo');
+require_once("../cgi/conexaoOracle.php");
 
 if (isset($_GET["datareproc"])){
 	$dtreprocessamento = $_GET["datareproc"];
@@ -14,10 +14,10 @@ if (isset($_GET["datareproc"])){
 		
 		//$stamp = strtotime(str_replace("/","-*",$dtreprocessamento));
 		//$dt = date('d/m/y',$stamp);
-		$ProcExecution = $conn->query("SELECT status FROM monitora_procedure a where ROWNUM < 2   order by data_ini desc");
+		$ProcExecution = $conn->query("SELECT status FROM monitora_procedure a where ROWNUM < 2 order by id desc");
 		while($row = $ProcExecution->fetch(PDO::FETCH_OBJ)){
 			foreach ($row as $item){
-				if($item !== 'OK'){
+				if($item === 'EXEC'){
 					echo "
 					<span class='alert'>
 					    <i class='fas fa-exclamation-triangle'></i>

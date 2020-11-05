@@ -1,5 +1,5 @@
 <?php
-    include("cgi/conexaoOracle.php");
+    require_once("cgi/conexaoOracle.php");
 ?>
 
 <!DOCTYPE html>
