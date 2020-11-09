@@ -15,19 +15,52 @@
     <script type="module" src="js/ajax.js"></script>
 </head>
 <body>
-    <div class="principal">
-        <header>
+    <div>
+        <div class="cabecalho">        
+        <header class="principal">
             <div class="container-header">
                 <div class="logo">
                     <img src="img/logo.png" alt="Logotipo Petz">
                 </div>                     
             </div>
-            <nav class="menu-header">
-                <ul>
-                    <li>Divergências de vendas</li>
-                </ul>
-            </nav>   
+            <div class="filtro">
+                <label class="label">
+                    Data inicial: 
+                    <input type="date" name="dataInicial" id="dataInicial" value= <?php echo date("Y-m-d"); ?> required>
+                </label>
+                <label class="label">
+                    Data final: 
+                    <input type="date" name="datafinal" id="datafinal" value= <?php echo date("Y-m-d"); ?> required>
+                </label>
+                <label class="label">
+                    Filial: 
+                    <select name="filial" placeholder="Selecione a filial">
+                        <?php 
+                            $filiais  = "select cod_protheus from ti_filiais where cod_protheus not in('01 0008','02 0004','02 0004','02 0004') ORDER BY cod_protheus";
+                            $rs = $conn->query($filiais);
+
+                            while($row = $rs->fetch(PDO::FETCH_OBJ)){                                 
+                                foreach ($row as $item) {
+                                    print "<option value='" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "'>"
+                                    .($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;"). "</option>\n";
+                                }                               
+                            }            		
+                        ?>
+                    </select>
+                </label>
+                <label class="label">
+                    Especie: 
+                    <select name="especie">
+                        <option value="NFS">NFS</option>
+                        <option value="SPED">SPED</option>
+                        <option value="CF">CF</option>
+                        <option value="SATCE">SATCE</option>
+                        <option value="NFCE">NFCE</option>
+                    </select>
+                </label>
+            </div>   
         </header>
+        </div>
         <div class="container-section">
             <section>        
                 <article>
