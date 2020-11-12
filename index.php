@@ -16,7 +16,7 @@
 </head>
 <body>
     <div>
-        <div class="cabecalho">        
+               
         <header class="principal">
             <div class="container-header">
                 <div class="logo">
@@ -26,15 +26,16 @@
             <div class="filtro">
                 <label class="label">
                     Data inicial: 
-                    <input type="date" name="dataInicial" id="dataInicial" value= <?php echo date("Y-m-d"); ?> required>
+                    <input type="date" class="dt" name="dataInicial" id="dataInicial" value= <?php echo date("Y-m-d"); ?> required>
                 </label>
                 <label class="label">
                     Data final: 
-                    <input type="date" name="datafinal" id="datafinal" value= <?php echo date("Y-m-d"); ?> required>
+                    <input type="date" class="dt" name="datafinal" id="datafinal" value= <?php echo date("Y-m-d"); ?> required>
                 </label>
                 <label class="label">
                     Filial: 
-                    <select name="filial" placeholder="Selecione a filial">
+                    <select name="filial" class="filial">
+                        <option value='TODAS' selected>Todas</option>\n
                         <?php 
                             $filiais  = "select cod_protheus from ti_filiais where cod_protheus not in('01 0008','02 0004','02 0004','02 0004') ORDER BY cod_protheus";
                             $rs = $conn->query($filiais);
@@ -50,7 +51,8 @@
                 </label>
                 <label class="label">
                     Especie: 
-                    <select name="especie">
+                    <select name="especie" class="especie">
+                        <option value="TODAS" selected>Todas</option>                        
                         <option value="NFS">NFS</option>
                         <option value="SPED">SPED</option>
                         <option value="CF">CF</option>
@@ -58,17 +60,17 @@
                         <option value="NFCE">NFCE</option>
                     </select>
                 </label>
+                <button id="btnConsult" name="btnConsult" class="botao">Consultar</button>
             </div>   
-        </header>
-        </div>
+        </header>        
         <div class="container-section">
             <section>        
                 <article>
                     <h1>Divergências Zanthus x Protheus</h1> 
                     <label class="data">
                         Data de Processamento:
-                        <input type="date" name="datareproc" id="datareproc" min="2019-01-01" value= <?php echo date("Y-m-d"); ?> required>
-                        <button id="btnProcessar" name="btnProcessar">Processar</button>
+                        <input type="date" class="dt" name="datareproc" id="datareproc" min="2019-01-01" value= <?php echo date("Y-m-d"); ?> required>
+                        <button id="btnProcessar" name="btnProcessar" class="botao">Processar</button>
                     </label>
                         <div id="Resultado">             
 							<table class="table">
