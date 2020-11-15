@@ -34,7 +34,7 @@
                 </label>
                 <label class="label">
                     Filial: 
-                    <select name="filial" class="filial">
+                    <select name="filial" class="slect">
                         <option value='TODAS' selected>Todas</option>\n
                         <?php 
                             $filiais  = "select cod_protheus from ti_filiais where cod_protheus not in('01 0008','02 0004','02 0004','02 0004') ORDER BY cod_protheus";
@@ -51,7 +51,7 @@
                 </label>
                 <label class="label">
                     Especie: 
-                    <select name="especie" class="especie">
+                    <select name="especie" class="slect">
                         <option value="TODAS" selected>Todas</option>                        
                         <option value="NFS">NFS</option>
                         <option value="SPED">SPED</option>
